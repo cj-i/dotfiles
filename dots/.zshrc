@@ -8,10 +8,11 @@ if [[ ":$FPATH:" != *":$HOME/.zsh/completions:"* ]]; then
   export FPATH="$HOME/.zsh/completions:$FPATH"
 fi
 
-alias e-zsh="nvim ~/.zshrc"
-alias r-zsh="source ~/.zshrc"
-alias fman="comgen -c | fzf | xargs man"
-alias ls="ls -a --color"
+alias e-zsh='nvim ~/.zshrc'
+alias r-zsh='source ~/.zshrc'
+alias fman='comgen -c | fzf | xargs man'
+alias ls='ls -a --color'
+alias fz='nvim $(fzf --preview="bat --color=always {}")'
 
 source $BREW_HOME/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 source $BREW_HOME/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -52,8 +53,6 @@ export STARSHIP_CONFIG="$HOME/.config/starship/init.toml"
 eval "$(starship init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(fzf --zsh)"
-
-alias fz="nvim $(fzf --preview='bat --color=always {}')""
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK
 export SDKMAN_DIR="$HOME/.sdkman"
