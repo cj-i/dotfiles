@@ -11,7 +11,6 @@
     let
       vars = {
         myUsername = "cj";
-        nixUsername = "${vars.myUsername}-nix";
       };
       pkgs = nixpkgs.legacyPackages.aarch64-darwin;
     in

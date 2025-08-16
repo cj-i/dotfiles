@@ -1,0 +1,15 @@
+[core]
+  directory = *
+  editor = nvim
+  pager = bat
+[credential]
+  helper = none
+[init]
+  defaultBranch = master
+[safe]
+  directory = *
+[user]
+  name = cj-i
+  email = 49499043+cj-i@users.noreply.github.com
+[include]
+  path = ./aliases

@@ -27,7 +27,7 @@ config = {
   tab_and_split_indices_are_zero_based = true,
   tab_bar_at_bottom = true,
   use_fancy_tab_bar = false,
-  window_background_opacity = 0.3,
+  window_background_opacity = 0.7,
   window_close_confirmation = "NeverPrompt",
   window_decorations = "TITLE | RESIZE",
 }
