@@ -195,9 +195,9 @@ format = '[ $symbol ($version) ]($style)'
 
 [cmd_duration]
 disabled = false
-format = '[ ▶ $duration ]($style)'
+format = '[ $duration ]($style)'
 
 [time]
 disabled = false
 time_format = "%R"
-format = '[  $time ]($style)'
+format = '[ $time ]($style)'

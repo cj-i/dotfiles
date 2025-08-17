@@ -35,13 +35,7 @@ autoload -U compinit && compinit
 autoload -U colors && colors
 autoload -U tetris
 
-zstyle ':completion:*' menu select # tab opens cmp menu
-zstyle ':completion:*' special-dirs true # force . and .. to show in cmp menu
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} ma=0\;33 # colorize cmp menu
-# zstyle ':completion:*' file-list true # more detailed list
-zstyle ':completion:*' squeeze-slashes false
-
-# Disable commands underline
+# disable commands underline
 (( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[path]=none
 ZSH_HIGHLIGHT_STYLES[path_prefix]=none
@@ -57,10 +51,11 @@ setopt globdots
 setopt extended_glob
 setopt interactive_comments
 setopt hist_expire_dups_first
-setopt hist_ignore_space
+setopt hist_find_no_dups
 setopt hist_ignore_all_dups
 setopt hist_ignore_dups
-setopt hist_find_no_dups
+setopt hist_ignore_space
+setopt hist_save_no_dups
 setopt hist_verify
 SAVEHIST=10000
 HISTSIZE=10000
@@ -68,8 +63,15 @@ HISTUP=erace
 HISTCONTROL=ignoreboth
 HISTFILE="$XDG_CACHE_HOME/zsh/.zsh_history"
 
-export STARSHIP_CONFIG="$HOME/.config/starship/init.toml"
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' menu no # tab opens cmp menu
+# zstyle ':completion:*' special-dirs true # force . and .. to show in cmp menu
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} ma=0\;33 # colorize cmp menu
+# zstyle ':completion:*' file-list true # more detailed list
+# zstyle ':completion:*' squeeze-slashes false
+# zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+
+export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/init.toml"
 eval "$(starship init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(fzf --zsh)"
-source <(fzf --zsh)
