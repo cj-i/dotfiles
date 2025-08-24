@@ -1,18 +1,45 @@
 { config, pkgs, vars, ... }:
 {
-  home.username = "${vars.myUsername}";
-  home.homeDirectory = if pkgs.stdenv.isDarwin
-    then "/Users/cj"
-    else "/home/${vars.myUsername}";
-  home.stateVersion = "25.05";
-  home.packages = with pkgs; [
-  ];
+  home = {
+    stateVersion = "25.05";
+    username = "${vars.myUsername}";
+    homeDirectory = if pkgs.stdenv.isDarwin
+      then "/Users/${vars.myUsername}"
+      else "/home/${vars.myUsername}";
 
-  home.file = {
+    packages = with pkgs; [
+      arc-browser
+      cowsay
+      discord
+    ];
+
+    file = {
+      "test" = {
+        source = config.lib.file.mkOutOfStoreSymlink "/Users/${vars.myUsername}/Documents/test";
+      };
+    };
+
+    sessionVariables = {};
   };
 
-  home.sessionVariables = {
+  programs = {
+    home-manager = {
+      enable = true;
+    };
+    bash = {
+      enable = false;
+    };
   };
 
-  programs.home-manager.enable = true;
+  nixpkgs = {
+    config = {
+      allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
+        "arc-browser"
+        "discord"
+      ];
+      permittedInsecurePackages = [
+        "arc-browser-1.106.0-66192"
+      ];
+    };
+  };
 }
