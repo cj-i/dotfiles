@@ -12,12 +12,16 @@
   outputs = { self, nixpkgs, home-manager, ... }:
     let
       vars = {
-        myUsername = "cj";
+        username = "cj";
+        homeDirectory = if pkgs.stdenv.isDarwin
+          then "/Users/${vars.username}"
+          else "/home/${vars.username}";
       };
-      pkgs = nixpkgs.legacyPackages.aarch64-darwin;
+      system = "aarch64-darwin";
+      pkgs = import nixpkgs { inherit system; };
     in
     {
-      homeConfigurations."${vars.myUsername}" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."${vars.username}" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
           ./home.nix

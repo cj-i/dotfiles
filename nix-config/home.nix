@@ -2,20 +2,17 @@
 {
   home = {
     stateVersion = "25.05";
-    username = "${vars.myUsername}";
-    homeDirectory = if pkgs.stdenv.isDarwin
-      then "/Users/${vars.myUsername}"
-      else "/home/${vars.myUsername}";
-
+    username = "${vars.username}";
+    homeDirectory = "${vars.homeDirectory}";
     packages = with pkgs; [
-      arc-browser
       cowsay
       discord
+      arc-browser
     ];
 
     file = {
       "test" = {
-        source = config.lib.file.mkOutOfStoreSymlink "/Users/${vars.myUsername}/Documents/test";
+        source = config.lib.file.mkOutOfStoreSymlink "${vars.homeDirectory}/Documents/test";
       };
     };
 
@@ -34,11 +31,11 @@
   nixpkgs = {
     config = {
       allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
-        "arc-browser"
         "discord"
+        "arc-browser"
       ];
       permittedInsecurePackages = [
-        "arc-browser-1.106.0-66192"
+        "arc-browser-1.109.0-67185"
       ];
     };
   };
