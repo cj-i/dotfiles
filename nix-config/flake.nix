@@ -8,10 +8,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    builtins.url = "flake:builtins";
   };
-  outputs = { self, nixpkgs, home-manager, builtins, ... } @inputs:
+  outputs = { self, nixpkgs, home-manager, ... }:
     let
-      system = inputs.builtins.currentSystem;
+      system = builtins.currentSystem;
       pkgs = nixpkgs.legacyPackages.${system};
       vars = {
         username = "cj";
