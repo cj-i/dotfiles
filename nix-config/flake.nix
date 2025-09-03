@@ -9,16 +9,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { self, nixpkgs, home-manager, ... }:
+  outputs = { self, nixpkgs, home-manager, builtins, ... }:
     let
+      system = builtins.currentSystem;
+      pkgs = nixpkgs.legacyPackages.${system};
       vars = {
         username = "cj";
         homeDirectory = if pkgs.stdenv.isDarwin
           then "/Users/${vars.username}"
           else "/home/${vars.username}";
       };
-      system = "aarch64-darwin";
-      pkgs = import nixpkgs { inherit system; };
     in
     {
       homeConfigurations."${vars.username}" = home-manager.lib.homeManagerConfiguration {
