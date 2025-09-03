@@ -9,9 +9,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { self, nixpkgs, home-manager, builtins, ... }:
+  outputs = { self, nixpkgs, home-manager, builtins, ... } @inputs:
     let
-      system = builtins.currentSystem;
+      system = inputs.builtins.currentSystem;
       pkgs = nixpkgs.legacyPackages.${system};
       vars = {
         username = "cj";
