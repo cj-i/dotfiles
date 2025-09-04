@@ -1,5 +1,4 @@
 {
-  description = "system configuration";
   inputs = {
     nixpkgs = {
       url = "github:nixos/nixpkgs/nixos-unstable";
@@ -8,11 +7,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    builtins.url = "flake:builtins";
   };
   outputs = { self, nixpkgs, home-manager, ... }:
     let
-      system = builtins.currentSystem;
+      system = "aarch64-darwin";
       pkgs = nixpkgs.legacyPackages.${system};
       vars = {
         username = "cj";
