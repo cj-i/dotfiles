@@ -43,6 +43,7 @@ setopt auto_menu
 setopt menu_complete
 setopt autocd
 setopt cdspell
+setopt correct
 setopt auto_param_slash
 setopt no_case_glob
 setopt no_case_match
