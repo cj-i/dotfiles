@@ -23,15 +23,11 @@ alias r-sh='exec $SHELL -l'
 alias set-o='set -o' # list of setopt
 alias y='yazi'
 alias zle-al='zle -al' # list of bindings
+alias csvcat='column -s, -c 10000 -t'
 
 source $BREW_HOME/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 source $BREW_HOME/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $BREW_HOME/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-zmodload zsh/curses
-zmodload zsh/complist
-autoload -U compinit && compinit
-autoload -U colors && colors
-autoload -U tetris
 
 # disable commands underline
 (( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
@@ -42,6 +38,7 @@ setopt append_history inc_append_history sharehistory
 setopt auto_menu
 setopt menu_complete
 setopt autocd
+setopt correct
 setopt auto_param_slash
 setopt no_case_glob
 setopt no_case_match
@@ -69,7 +66,6 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} ma=0\;33 # colorize cmp me
 # zstyle ':completion:*' squeeze-slashes false
 # zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
-export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/init.toml"
 eval "$(starship init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(fzf --zsh)"

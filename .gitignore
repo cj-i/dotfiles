@@ -1,6 +1,5 @@
 .DS_Store
 .idea/
 .vscode/
-flake.lock
 .zcompdump
 .zsh_history
