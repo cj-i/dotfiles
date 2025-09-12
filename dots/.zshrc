@@ -24,6 +24,7 @@ alias set-o='set -o' # list of setopt
 alias y='yazi'
 alias zle-al='zle -al' # list of bindings
 alias csvcat='column -s, -c 10000 -t'
+alias s='sudo !!'
 
 source $BREW_HOME/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 source $BREW_HOME/share/zsh-autosuggestions/zsh-autosuggestions.zsh
