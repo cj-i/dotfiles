@@ -1,0 +1,36 @@
+font-family = "JetBrainsMono Nerd Font"
+font-size = 16
+
+theme = Adwaita Dark
+
+background-opacity = 0.7
+background-blur-radius = 40
+
+window-decoration = true
+
+window-width = 120
+window-height = 40
+
+cursor-style = bar
+cursor-style-blink = true
+
+keybind = cmd+a>n=new_split:right
+keybind = cmd+a>m=new_split:down
+keybind = cmd+a>x=close_surface
+keybind = cmd+a>c=new_tab
+
+keybind = cmd+a>h=goto_split:left
+keybind = cmd+a>j=goto_split:bottom
+keybind = cmd+a>k=goto_split:top
+keybind = cmd+a>l=goto_split:right
+
+keybind = cmd+a>i=resize_split:left,5
+keybind = cmd+a>o=resize_split:down,5
+keybind = cmd+a>p=resize_split:up,5
+keybind = cmd+a>[=resize_split:right,5
+
+keybind = cmd+a>,=previous_tab
+keybind = cmd+a>.=next_tab
+
+keybind = cmd+a>u=toggle_fullscreen
+keybind = cmd+a>s=write_screen_file:open
