@@ -1,18 +1,13 @@
-font-family = "JetBrainsMono Nerd Font"
-font-size = 16
-
-theme = Adwaita Dark
-
-background-opacity = 0.7
 background-blur-radius = 40
+background-opacity = 0.7
 
-window-decoration = true
-
-window-width = 120
-window-height = 40
-
+cursor-color = #329c11
+cursor-opacity = 0.9
 cursor-style = bar
 cursor-style-blink = true
+
+font-family = "JetBrainsMono Nerd Font"
+font-size = 16
 
 keybind = cmd+a>n=new_split:right
 keybind = cmd+a>m=new_split:down
@@ -34,3 +29,9 @@ keybind = cmd+a>.=next_tab
 
 keybind = cmd+a>u=toggle_fullscreen
 keybind = cmd+a>s=write_screen_file:open
+
+theme = Adwaita Dark
+
+window-decoration = true
+window-height = 40
+window-width = 120
