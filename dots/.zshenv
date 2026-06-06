@@ -27,3 +27,9 @@ export HOMEBREW_DEVELOPER=1
 export HOMEBREW_NO_ENV_HINTS=1
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_ANALYTICS_DEBUG=1
+
+# Ollama
+export OLLAMA_MODELS="$HOME/.ollama/models"
+
+# Antigravity
+export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
