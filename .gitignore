@@ -2,5 +2,8 @@ Thumbs.db
 .DS_Store
 .idea/
 .vscode/
+.session/
 .zcompdump
 .zsh_history
+*-lock.json
+*.lock

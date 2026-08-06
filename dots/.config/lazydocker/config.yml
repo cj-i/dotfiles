@@ -1,0 +1,9 @@
+gui:
+  returnImmediately: false
+
+customCommands:
+  containers:
+    - name: "Bash into Container"
+      attach: true
+      command: "docker exec -it {{ .ID }} /bin/bash"
+      key: 'B'

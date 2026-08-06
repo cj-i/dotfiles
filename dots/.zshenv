@@ -11,7 +11,7 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export FFF_HIDDEN=1
 export FFF_LS_COLORS=1
 export FFF_CD_ON_EXIT=0
-export EDITOR="nvim"
+export EDITOR='nvim'
 
 # Starship [https://starship.rs]
 export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/init.toml"
