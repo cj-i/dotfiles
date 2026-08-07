@@ -10,6 +10,11 @@ brew bundle
 stow dots
 ```
 
+### To automatically remove and then re-create the symlinks with gnu stow
+```
+stow -R dots
+```
+
 ### To delete symlinks with gnu stow
 ```
 stow -D dots
