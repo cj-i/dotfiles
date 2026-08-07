@@ -9,7 +9,6 @@ if [[ ":$FPATH:" != *":$XDG_CACHE_HOME/zsh/completions:"* ]]; then
 fi
 
 alias b='bat'
-alias nvim="nix run $XDG_CONFIG_HOME/nvim --"
 alias e-zsh="nvim $ZDOTDIR/.zshrc"
 alias v='nvim'
 alias f='fff'
