@@ -1,8 +1,13 @@
 # How to install these configs
 
-### To pull git subfolder (nvim)
+### To pull all git subfolder
 ```
 git submodule update --init --recursive
+```
+
+### To remove local files for all git submodules
+```
+git submodule deinit --all
 ```
 
 ### Install Homebrew packages
