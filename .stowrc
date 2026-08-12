@@ -14,3 +14,4 @@
 --ignore=README\.md$
 --ignore=flake\.nix$
 --ignore=\.luarc\.json$
+--ignore=nvim
