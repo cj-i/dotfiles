@@ -1,0 +1,13 @@
+[mgr]
+linemode       = "owner"
+ratio          = [1, 4, 3]
+show_hidden    = true
+show_symlink   = true
+sort_by        = "alphabetical"
+sort_dir_first = true
+sort_reverse   = false
+sort_sensitive = false
+
+[preview]
+tab_size = 2
+wrap     = "no"
