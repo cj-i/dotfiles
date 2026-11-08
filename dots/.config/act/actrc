@@ -1,0 +1,5 @@
+-P ubuntu-slim=node:26-slim
+-P ubuntu-latest=node:26-slim
+-P ubuntu-22.04=node:26-slim
+-P ubuntu-20.04=node:26-slim
+-P ubuntu-18.04=node:26-slim
