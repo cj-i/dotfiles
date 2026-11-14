@@ -32,7 +32,8 @@ $julia\
 $nim\
 $gradle\
 $cmake\
-$docker_context\
+${custom.colima}\
+${custom.apple_container}\
 $aws\
 $gcloud\
 $azure\
@@ -109,9 +110,7 @@ symbol = "azure "
 symbol = "terraform "
 
 [docker_context]
-symbol = "docker"
-only_with_files = false
-disabled = false
+disabled = true
 
 [gradle]
 symbol = "gradle"
@@ -201,3 +200,23 @@ format = '[ $duration ]($style)'
 disabled = false
 time_format = "%R"
 format = '[ $time ]($style)'
+
+[custom.colima]
+symbol = "colima "
+disabled = false
+shell = ["bash"]
+when = "colima status >/dev/null 2>&1"
+command = "colima version 2>/dev/null | awk 'NR==1{v=$3} /^runtime:/{r=$2} /^arch:/{a=$2} END{print \"v\" v \" (\" r \" \" a \")\"}'"
+detect_files = ["Containerfile", "Dockerfile", "docker-compose.yml", "compose.yaml"]
+style = "bold blue"
+format = '[ $symbol$output ]($style)'
+
+[custom.apple_container]
+symbol = "apple container "
+disabled = false
+shell = ["bash"]
+when = "container system status >/dev/null 2>&1"
+command = "echo \"v$(container --version 2>/dev/null | awk '{print $4}')\""
+detect_files = ["Containerfile", "Dockerfile", "docker-compose.yml", "compose.yaml"]
+style = "bold white"
+format = '[ $symbol$output ]($style)'
